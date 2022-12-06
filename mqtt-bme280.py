@@ -171,8 +171,8 @@ def main_loop():
             sensor = BME280(standby=BME280_STANDBY_1000,
                 t_mode=BME280_OSAMPLE_8, p_mode=BME280_OSAMPLE_8, h_mode=BME280_OSAMPLE_8,
                 address=0x76)
-        except Exception, e:
-            logging.error("Sensor opening exception: %r" % e)
+        except Exception as ex:
+            logging.error("Sensor opening exception: %s", ex)
             time.sleep(10)
             continue
 
